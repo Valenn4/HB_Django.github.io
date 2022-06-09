@@ -43,7 +43,8 @@
 
             <div class="login">
                 
-                <form action="dashboard" class="formulario">
+                <form action="" class="formulario" method="post">
+                    {% csrf_token %}
                     <h2 class="titulo_home">Home Banking</h2>
                     <div class="usuario_acceso">
                         <input type="text" name="usuario" placeholder="Usuario" class="usuario">

@@ -40,27 +40,21 @@
                 <div class="registro">
                     <h2><a href="\">Ya tengo una cuenta</a></h2>
                 </div>
-                <form action="registrobd.php" class="formulario" method="post">
-    
-
+                <form action="" class="formulario" method="post">
+                    {% csrf_token %}
                     <h2 class="titulo_home">Crear cuenta</h2>
+
+                    {% for campo in formulario %}
                     
                     <div class="nombre_acceso">
-                        <input type="text" name="usuario" class="usuario"
-                        placeholder="Usuario">
+                        <input type="{{campo.field.widget.input_type}}" name="{{campo.name}}" class="usuario"
+                        placeholder="{{campo.label}}">
                     </div>
 
-                    <div class="email_acceso">
-                        <input type="text" name="email" class="email" placeholder="Correo Electronico">
-                    </div>
 
-                    <div class="password-acceso">
-                        <input type="password" name="password" class="password" placeholder="Contraseña">
-                    </div>
-
-                    
+                    {% endfor %}
                     <div class="submit_acceso">
-                        <button id="continuar" >Continuar</button>
+                        <button id="continuar" type="submit">Continuar</button>
                     </div>
                 </form>
             </div>

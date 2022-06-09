@@ -1,0 +1,8 @@
+from dataclasses import field
+from django import forms
+from .models import Usuarios
+
+class UsuariosForm(forms.ModelForm):
+    class Meta:
+        model = Usuarios
+        fields = '__all__'
